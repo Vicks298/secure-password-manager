@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <title>Dashboard</title>
+</head>
+<body>
+<div class="container">
+    <h2>Dashboard ({{ session['user'] }})</h2>
+
+    <h3>Add Password</h3>
+    <form method="POST" action="/add">
+        Service:<br>
+        <input name="service" required><br>
+        Username:<br>
+        <input name="username_pw" required><br>
+        Password:<br>
+        <input type="password" name="password" required><br><br>
+        <button>Add Password</button>
+    </form>
+
+    <h3>Retrieve Password</h3>
+    <form method="POST" action="/view">
+        Service:<br>
+        <input name="service" required><br><br>
+        <button>Retrieve</button>
+    </form>
+
+    <p class="message">{{ message }}</p>
+    <a href="/logout">Logout</a>
+</div>
+</body>
+</html>

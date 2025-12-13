@@ -1,49 +1,38 @@
-# 🔐 Secure Password Manager
+# Password Manager (Flask)
 
-A beginner-friendly cybersecurity project in Python that stores and retrieves credentials securely using encryption.
-
----
+A simple multi-user password manager built with Python and Flask.
+Each user secures their passwords using a master password and encryption.
 
 ## Features
+- User registration and login
+- Master password–based encryption
+- Encrypted password storage
+- User-isolated vaults
+- Web interface (Flask)
+- Live deployment (Render)
 
-- Add new credentials (website/service, username, password)  
-- Retrieve stored credentials using master password  
-- Encrypts passwords with **Fernet encryption**  
-- Master password protection  
-- Terminal-based interface
+## How It Works
+- Users register with a username and master password
+- The master password is used to encrypt/decrypt stored credentials
+- Passwords are never stored in plain text
+- Each user has a separate encrypted vault
 
----
+## Security Notes
+- Encrypted storage using symmetric encryption
+- No password recovery (by design)
+- Application cannot read user passwords without master password
 
-## Folder Structure
+## Tech Stack
+- Python
+- Flask
+- Cryptography (Fernet)
+- HTML/CSS
+- Render
 
-password-manager/
-├── main.py
-├── manager_utils.py
-├── data.json # Encrypted credentials
-├── README.md
-├── LICENSE
-└── .gitignore
-
-
----
-
-## How to Run
-
-1. Open terminal and navigate to project folder:
-
+## Run Locally
 ```bash
-cd path\to\password-manager
+pip install -r requirements.txt
+python app.py
 
-2. Run the program:
-python main.py
-
-3. Follow the menu to add or retrieve credentials.
-
-License
-
-This project is licensed under the MIT License.
-
-
----
 
 
